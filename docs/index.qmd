@@ -1,0 +1,26 @@
+```{}
+```
+
+---
+title: "Project FOFOS22"
+date: today
+author:
+  - name: Linus Folini
+    orcid: 0000-0003-2196-5015
+    email: me@web.org
+    affiliation: 
+      - name: ETH Zurich
+        url: https://ethz.ch/de.html
+abstract: 
+  The abstract will be placed here. Breaks can be added by hitting return on the keyboard.
+license: "CC BY"
+citation: 
+  container-title: My Blog
+  url: https://www.example.com
+bibliography: references.bib
+csl: apa.csl
+editor: visual
+---
+
+```{}
+```
