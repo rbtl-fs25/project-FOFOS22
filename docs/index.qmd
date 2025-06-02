@@ -18,7 +18,7 @@ license: "CC BY"
 citation: 
   container-title: Research Beyond the Lab
   url: https://rbtl-fs25.github.io/website/
-bibliography: bibliography.bib
+bibliography: references.bib
 csl: apa.csl
 editor: visual
 format:
@@ -30,8 +30,6 @@ format:
 execute:
   warning: true
   cache: false  
-
-editor: visual
 editor_options: 
   chunk_output_type: console
 ---
@@ -40,7 +38,7 @@ editor_options:
 
 ```{r}
 #| echo: true
-#| include: false
+#| include: true
 suppressPackageStartupMessages({
 library(tidyverse)})
 library(dplyr)
@@ -58,11 +56,11 @@ library(kableExtra)
 
 # Introduction
 
-Disposable cups seem unavoidable these days. Almost every cafeteria, shop, and restaurant offers some kind of disposable cup solution to meet the on-the-go demand of customers. Nearly half a trillion disposable cups are produced every year—that’s over 70 cups per person annually—making it a \$20 billion industry and still growing @magazine2011mugs . To put it in perspective: every second coffee or hot drink is sold in a disposable cup.
+Disposable cups seem unavoidable these days. Almost every cafeteria, shop, and restaurant offers some kind of disposable cup solution to meet the on-the-go demand of customers. Nearly half a trillion disposable cups are produced every year—that’s over 70 cups per person annually—making it a \$20 billion industry and still growing. To put it in perspective: every second coffee or hot drink is sold in a disposable cup.
 
-Although there are many materials used, paper and Styrofoam are the most common. Styrofoam cups, mainly used in the US, are popular because they insulate well, keeping drinks hot for longer. However, they are nearly impossible to recycle and usually end up in landfills. The US alone throws away about 25 billion of these cups each year—roughly 82 per person[@2018states].
+Although there are many materials used, paper and Styrofoam are the most common. Styrofoam cups, mainly used in the US, are popular because they insulate well, keeping drinks hot for longer. However, they are nearly impossible to recycle and usually end up in landfills. The US alone throws away about 25 billion of these cups each year—roughly 82 per person @earthactionnorthdevondisposable.
 
-At first glance, paper cups might seem like the more reasonable alternative. But they also have their downsides. They are mostly made from virgin pulp, as recycled paper is rarely used due to health concerns. About 70% of global paper production comes from diminishing forests. And because paper alone isn’t waterproof, paper cups are coated with a thin plastic lining, which makes them very difficult to recycle. As a result, only about 0.25% of paper cups are ever recycled. The rest ends up in landfills, incineration plants, or as litter in the environment[@2018states]. [@nowell2024disposablea].
+At first glance, paper cups might seem like the more reasonable alternative. But they also have their downsides. They are mostly made from virgin pulp, as recycled paper is rarely used due to health concerns. About 70% of global paper production comes from diminishing forests. And because paper alone isn’t waterproof, paper cups are coated with a thin plastic lining, which makes them very difficult to recycle. As a result, only about 0.25% of paper cups are ever recycled. The rest ends up in landfills, incineration plants, or as litter in the environment.
 
 This study seeks to explore the reasons behind the preference for single-use cups despite the availability of alternatives.
 
@@ -80,7 +78,7 @@ Firstly when looking at the plain distribution of the choice of mug seen in @fig
 #| fig-cap: Choice of Cup by the Customers at ETH Cafeteria Einstein
 
 
-idata.dis <- read_csv("../data/processed/data_cups_distribution.csv",show_col_types = FALSE)
+idata.dis <- read_csv("../data/final/data_cups_distribution.csv",show_col_types = FALSE)
 
 # Basic pie chart with percentage labels
 ggplot(idata.dis, aes(x = "", y = n, fill = cup_label)) +
@@ -108,9 +106,9 @@ Especially considering that Zweistein isn't a typical Take Away location and the
 #| label: fig-reas-cups
 #| fig-cap: Reasons indicated for choice of cup
 #| echo: true
-idata_suc_reason <- read_csv("../data/processed/data_cup_suc_reason.csv",show_col_types = FALSE)
+idata_suc_reason <- read_csv("../data/final/data_cup_suc_reason.csv",show_col_types = FALSE)
 
-idata_muc_reason <- read_csv("../data/processed/data_cup_muc_reason.csv",show_col_types = FALSE)
+idata_muc_reason <- read_csv("../data/final/data_cup_muc_reason.csv",show_col_types = FALSE)
 
 # Bar plot of answer counts
 isucplot <- ggplot(idata_suc_reason, 
@@ -170,10 +168,12 @@ Unsurprisingly, the second most common reason given was the desire to take the d
 #| fig-cap: Distrubtion of cup choice over time interval
 
 
-idata_time <- read_csv("../data/processed/data_cup_time.csv",show_col_types = FALSE)
+idata_time <- read_csv("../data/final/data_cup_time.csv",show_col_types = FALSE)
 
-ggplot(idata_time, aes(x = time_hm, y = cup, color = cup)) +
-  geom_point(size = 1) +
+ggplot(idata_time, aes(x = time_hm,
+                       y = cup,
+                       color = cup)) +
+  geom_point(size = 2) +
   theme_minimal() +
   labs(
     title = "Time Distribution of Cup Choice",
@@ -193,7 +193,7 @@ When considering age range in cup choice reasoning, a further pattern emerges: t
 #| label: tbl-cup-summary
 #| tbl-cap: Summary tabe of the choice and reasoning
 
-idata_table <- read_csv("../data/processed/data_table.csv",show_col_types = FALSE)
+idata_table <- read_csv("../data/final/data_table.csv",show_col_types = FALSE)
 kable(idata_table, caption = "Summary of Reasons and Cup choice combined with the age of the participant") 
 ```
 
@@ -209,4 +209,4 @@ kable(idata_table, caption = "Summary of Reasons and Cup choice combined with th
 -   **University Break Times**:\
     Single-use cups showed a usage spike during the standard break time (10:00–10:15), possibly reflecting the convenience of takeaway during short breaks, whereas mug usage remained stable throughout the day
 
-# Bibliography
+# 

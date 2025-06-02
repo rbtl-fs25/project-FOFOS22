@@ -61,7 +61,7 @@ sdata_cup_distribution <- data_clean |>
                             "SUC" = "Single-Use Cup"
   ))
 
-write_csv(sdata_cup_distribution,"data/processed/data_cups_distribution.csv")
+write_csv(sdata_cup_distribution,"data/final/data_cups_distribution.csv")
 
 ###############################Reasoning########################################
 
@@ -95,15 +95,15 @@ sdata_cup_muc_reason <- sdata_cup_reason |>
                              )) 
   
 #### Export to csv
-write.csv(sdata_cup_suc_reason, "data/processed/data_cup_suc_reason.csv",row.names = FALSE)
-write.csv(sdata_cup_muc_reason, "data/processed/data_cup_muc_reason.csv",row.names = FALSE)
+write.csv(sdata_cup_suc_reason, "data/final/data_cup_suc_reason.csv",row.names = FALSE)
+write.csv(sdata_cup_muc_reason, "data/final/data_cup_muc_reason.csv",row.names = FALSE)
 
 ############################## CUP vs. Gender ##################################
 
 sdata_cup_gender <- data_clean |> 
   select(id,cup, sex)
 
-write.csv(sdata_cup_gender, "data/processed/data_cup_gender.csv",row.names = FALSE)
+write.csv(sdata_cup_gender, "data/final/data_cup_gender.csv",row.names = FALSE)
 
 
 ############################## CUP vs. time ####################################
@@ -112,7 +112,7 @@ sdata_cup_time <- data_clean |>
   select(id,cup,time_hm) 
   
 
-write.csv(sdata_cup_time, "data/processed/data_cup_time.csv",row.names = FALSE)
+write.csv(sdata_cup_time, "data/final/data_cup_time.csv",row.names = FALSE)
 
 ############################### Table ##########################################
 
@@ -142,5 +142,5 @@ sdata_table <- data_clean |>
          "Reason MUC" = muc_reason,
          "Type of Cup" = cup)
   
-write.csv(sdata_table, "data/processed/data_table.csv",row.names = FALSE)
+write.csv(sdata_table, "data/final/data_table.csv",row.names = FALSE)
 
