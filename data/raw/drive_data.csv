@@ -1,0 +1,36 @@
+date,weekday,Location [Irchel/ETH],gender [male/femal/undefined],age,profession?,level,"Cup [SUC,MUC,OWN,CUP]","SUC reason [A,B,C,D]",MUC reason,next destination,Column 1,Column 2
+1899-12-30T10:00:00Z,DO,ETH,f,24,E,M,CUP,NA,B,A,NA,NA
+1899-12-30T10:00:00Z,DO,ETH,m,25,E,M,CUP,NA,B,A,NA,NA
+1899-12-30T10:02:00Z,DO,ETH,f,42,D,NA,OWN,NA,E,C,NA,NA
+1899-12-30T10:03:00Z,DO,ETH,m,22,C,NA,CUP,NA,B,A,A,Education & Research
+1899-12-30T10:12:00Z,DO,ETH,m,40,L,NA,SUC,C,NA,A,B,"Business, Finance & Management"
+1899-12-30T10:12:00Z,DO,ETH,m,23,E,NA,SUC,C,NA,C,C,IT & Computer Science
+1899-12-30T10:13:00Z,DO,ETH,m,72,H,NA,SUC,F,NA,A,D,Healthcare & Medicine
+1899-12-30T10:14:00Z,DO,ETH,m,22,C,NA,CUP,NA,B,A,E,Engineering & Architecture
+1899-12-30T10:15:00Z,DO,ETH,m,56,B,NA,SUC,F,NA,A,F,"Arts, Design & Media"
+1899-12-30T10:16:00Z,DO,ETH,m,27,B,NA,SUC,F,NA,A,G,"Law, Government & Public Policy"
+1899-12-30T10:20:00Z,DO,ETH,f,26,H,NA,SUC,F,NA,A,H,"Agriculture, Environment & Natural Sciences"
+1899-12-30T10:25:00Z,DO,ETH,m,23,E,NA,SUC,B,NA,A,I,"Trades, Manufacturing & Skilled Labor"
+1899-12-30T10:25:00Z,DO,ETH,f,28,L,NA,SUC,F,NA,A,J,"Transportation, Travel & Logistics"
+1899-12-30T10:27:00Z,DO,ETH,f,27,H,NA,CUP,NA,B,A,K,"Sales, Marketing & Customer Service"
+1899-12-30T10:29:00Z,DO,ETH,m,25,E,NA,CUP,NA,B,A,L,Social Services & Non-Profit
+1899-12-30T10:30:00Z,DO,ETH,m,27,C,NA,CUP,NA,B,A,NA,NA
+1899-12-30T10:37:00Z,DO,ETH,f,27,L,NA,SUC,F,NA,A,NA,NA
+1899-12-30T10:38:00Z,DO,ETH,m,25,C,NA,CUP,NA,B,A,A,On site (Einstein/Zweistein resp. Irchel Cafeteria)
+1899-12-30T10:38:00Z,DO,ETH,m,29,E,NA,CUP,NA,B,A,B,Polyterrasse/Stairs in front of Irchel
+1899-12-30T10:43:00Z,DO,ETH,m,23,E,NA,CUP,NA,B,A,C,walking distance away (Campus)
+1899-12-30T10:49:00Z,DO,ETH,f,22,C,NA,CUP,NA,B,A,D,further away
+1899-12-30T10:52:00Z,DO,ETH,m,41,I,NA,SUC,B,NA,B,E,on the road
+1899-12-30T10:53:00Z,DO,ETH,f,21,D,NA,CUP,NA,B,A,NA,NA
+1899-12-30T10:55:00Z,DO,ETH,m,28,A,NA,CUP,NA,B,A,A,No other cups available
+1899-12-30T10:56:00Z,DO,ETH,m,28,E,NA,OWN,NA,D,A,B,Take Away
+1899-12-30T10:58:00Z,DO,ETH,m,20,E,NA,CUP,NA,B,A,C,Preference
+1899-12-30T11:00:00Z,DO,ETH,f,24,E,NA,SUC,D,NA,C,D,Convenience
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,E,Hygiene
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,F,more visible
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,A,only option
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,B,consumed on site
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,C,Preference
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,D,Price reduction
+NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,E,Environmental Concerns

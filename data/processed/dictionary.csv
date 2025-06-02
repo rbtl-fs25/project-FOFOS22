@@ -1,0 +1,12 @@
+variable_name,description
+id,unique identifier that's given to each participant
+time_hm,Time stamp of when the participant got the Coffee in Hour:Minute format
+weekday,Day of the week when the participant was asked
+loc,"location of where the coffe was bought, where the abbreviation ETH means Cafeteria Zweistein"
+sex,the gender of the participant
+age,the age of the participant
+prf,abbreviation of the profession of the participant
+cup,Type of cup the participant chose
+suc_reason,reason for choosing the single use cup
+muc_reason,reason for choosing the multi use cup/own mug/ cafeteria mug
+dest,destination to which they were heading with the coffee

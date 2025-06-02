@@ -2,16 +2,16 @@
 
 ## General information
 
-1.  Title of Dataset:  
+1.  Title of Dataset:  Cafeteria_Cups
 
 2.  Author Information
 
 **Author A**
 
-- First name:
-- Surname:
+- First name: Linus
+- Surname: Folini
 - ORCID iD
-- Email:
+- Email: lfolini@student.ethz.ch
 
 **Author B**
 
@@ -22,12 +22,12 @@
 
 etc.
 
-3.  Date of data collection (single date, range, approximate date):
+3.  Date of data collection (single date, range, approximate date): 22.05.25
 
-4.  Geographic location of data collection:
+4.  Geographic location of data collection: ETH Zürich Cafeteria Zweistein
 
 5.  Information about funding sources that supported the collection of
-    the data: 
+    the data:  
 
 ## Sharing / access information
 
