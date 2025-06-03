@@ -27,38 +27,38 @@ etc.
 4.  Geographic location of data collection: ETH Zürich Cafeteria Zweistein
 
 5.  Information about funding sources that supported the collection of
-    the data:  
+    the data:  -
 
 ## Sharing / access information
 
-1.  Licenses/restrictions placed on the data:  
+1.  Licenses/restrictions placed on the data:  -
 
 Recommended: This work is licensed under the Creative Commons Attribution 4.0 International license (CC-BY-4.0).
 
-2.  Links to publications that cite or use the data: 
+2.  Links to publications that cite or use the data: -
 
 3.  Links to other publicly accessible locations of the data: -
 
-4.  Links/relationships to ancillary data sets: 
+4.  Links/relationships to ancillary data sets: -
 
-5.  Was data derived from another source? 
+5.  Was data derived from another source? -
 
 ## Methodological information
 
-1.  Description of methods used for collection/generation of data:
+1.  Description of methods used for collection/generation of data: Observational Study
 
-2.  Methods for processing the data:
+2.  Methods for processing the data: Observation and questioning of participants
 
 3.  Instrument- or software-specific information needed to interpret the
-    data: 
+    data: R, excel or any csv-readable software
 
 4.  Standards and calibration information, if appropriate: -
 
-5.  Environmental/experimental conditions: 
+5.  Environmental/experimental conditions: 22.05.25 10-11 AM
 
-6.  Describe any quality-assurance procedures performed on the data: 
+6.  Describe any quality-assurance procedures performed on the data: -
 
 7.  People involved with sample collection, processing, analysis and/or
-    submission:
+    submission: -
 
 
