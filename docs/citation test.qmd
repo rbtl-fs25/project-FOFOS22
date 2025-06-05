@@ -1,6 +1,0 @@
----
-title: "Cit test"
-bibliography: references.bib
----
-
-this test @earthactionnorthdevondisposable

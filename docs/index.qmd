@@ -6,8 +6,8 @@ title: "Sustainable Sips: Analyzing Factors Influencing Cup Selection at ETH Zur
 subtitle: "Capstone Project"
 date: today
 author:
-  - name: "Linus Folini"
-    orcid: 0000-0003-2196-5015
+  - name: "Linus Folini" #why is it not showing???!!??
+    orcid: 0009-0007-8251-2702
     email: lfolini@student.ethz.ch
     affiliation: 
       - name: ETH Zurich
@@ -17,8 +17,8 @@ abstract:
 license: "CC BY"
 citation: 
   container-title: Research Beyond the Lab
-  url: https://rbtl-fs25.github.io/website/
-bibliography: references.bib
+  url: https://rbtl-fs25.github.io/project-FOFOS22/
+bibliography: references.bib #Why is it not showing?  
 csl: apa.csl
 editor: visual
 format:
@@ -49,6 +49,7 @@ library(conflicted)
 library(cowplot)
 library(knitr)
 library(kableExtra)
+library(scales)
 
 #Data used in index_file -> idata
 
@@ -70,7 +71,7 @@ This research is based on an observational study conducted at the Cafeteria Eins
 
 # Results
 
-Firstly when looking at the plain distribution of the choice of mug seen in @fig-dis-cups we confirm the observation mentioned in the introduction. 42% of the customers chose the Single Use Cup and 58% some sort of Reusable Cup.
+Firstly when looking at the plain distribution of the choice of mug seen in @fig-dis-cups we confirm the observation mentioned in the introduction. 41% of the customers chose the Single Use Cup and 59% some sort of Reusable Cup.
 
 ```{r}
 #| echo: true
@@ -104,7 +105,7 @@ Especially considering that Zweistein isn't a typical Take Away location and the
 
 ```{r}
 #| label: fig-reas-cups
-#| fig-cap: Reasons indicated for choice of cup
+#| fig-cap: Reasons for Cup Selection
 #| echo: true
 idata_suc_reason <- read_csv("../data/final/data_cup_suc_reason.csv",show_col_types = FALSE)
 
@@ -118,7 +119,7 @@ isucplot <- ggplot(idata_suc_reason,
   geom_bar(stat = "identity",
     show.legend = FALSE, width = 0.4) +
   labs(
-    title = "Reason for choosing cup",
+    title = "Reasons for Cup Selection",
     y = "Single Use Cup",
     x = ""
   ) +
@@ -140,7 +141,7 @@ imucplot <- ggplot(idata_muc_reason,
     show.legend = FALSE, width = 0.4) +
   labs(
     y = "Multi Use Cup",
-    x = "Number of Answers (Single Choice)"
+    x = "Number of Answers"
   ) +
   scale_fill_colorblind() +
   theme_minimal() +
@@ -158,14 +159,14 @@ library(gridExtra)
 plot_grid(isucplot, imucplot, ncol = 1, align = "v", axis = "lr")
 ```
 
-When we compare the reasoning behind the choice, as seen in fig @fig-reas-cups we some clear tendency in both choices. Interestingly, most participants in this study mentioned that they chose the single-use paper cup simply because it was the first thing they saw next to the machine—making it a logical and convenient choice. This salience bias is evident in the setup (see image below): the cafeteria mugs are stored in a heating cabinet, making them less visible and accessible, while the single-use cups are prominently displayed right next to the coffee machine.
+When we compare the reasoning behind the choice, as seen in fig @fig-reas-cups we some clear tendency in both choices. Interestingly, most participants in this study mentioned that they chose the single-use paper cup simply because it was the first thing they saw next to the machine—making it a logical and convenient choice. This salience bias is evident in the setup: the cafeteria mugs are stored in a heating cabinet next to machine, making them less visible and accessible, while the single-use cups are prominently displayed right next to the coffee machine.
 
 Unsurprisingly, the second most common reason given was the desire to take the drink away, followed by general preference. However, upon further questioning, this preference was closely tied to convenience. Many participants expressed that they preferred using a single-use cup—even when consuming the drink on-site—because it left the option open to take the drink with them later. In other words, the perceived convenience of future flexibility influenced their immediate choice.
 
 ```{r}
 #| echo: true
 #| label: fig-cup-time
-#| fig-cap: Distrubtion of cup choice over time interval
+#| fig-cap: Analysis of Cup Selection Over Time
 
 
 idata_time <- read_csv("../data/final/data_cup_time.csv",show_col_types = FALSE)
@@ -178,20 +179,19 @@ ggplot(idata_time, aes(x = time_hm,
   labs(
     title = "Time Distribution of Cup Choice",
     x = "Time",
-    y ="Type of Cup",
-  ) + scale_fill_discrete(labels = c("Cafeteria Mug", 
-                                     "Own Mug",
-                                     "Single Use Paper Cup"))
+    y = "Type of Cup",
+    color = "Type of Cup"
+  ) 
 
 ```
 
-An analysis of the time distribution of coffee cup choices reveals a noticeable clustering of single-use cup selections around the typical break period (10:00–10:15). In contrast, the use of conventional cafeteria mugs remains relatively stable throughout the measured interval. Although the data is not sufficient to draw definitive conclusions, this observed trend in single-use cup usage may reflect the preference for take-away convenience discussed earlier.
+An analysis of the time distribution seen in @fig-cup-time of coffee cup choices reveals a noticeable clustering of single-use cup selections around the typical break period (10:00–10:15). In contrast, the use of conventional cafeteria mugs remains relatively stable throughout the measured interval. Although the data is not sufficient to draw definitive conclusions, this observed trend in single-use cup usage may reflect the preference for take-away convenience discussed earlier.
 
 When considering age range in cup choice reasoning, a further pattern emerges: the previously mentioned salience bias appears to be particularly strong among older participants. Compared to the average age of those who consumed their beverages on-site using reusable cups, those who opted for single-use cups were, on average, more than ten years older. Table @tbl-cup-summary provides a summary of the study, including participants' age ranges, and their reasoning for cup choice.
 
 ```{r}
 #| label: tbl-cup-summary
-#| tbl-cap: Summary tabe of the choice and reasoning
+#| tbl-cap: Selection Summary and Rationale Table
 
 idata_table <- read_csv("../data/final/data_table.csv",show_col_types = FALSE)
 kable(idata_table, caption = "Summary of Reasons and Cup choice combined with the age of the participant") 
@@ -210,3 +210,5 @@ kable(idata_table, caption = "Summary of Reasons and Cup choice combined with th
     Single-use cups showed a usage spike during the standard break time (10:00–10:15), possibly reflecting the convenience of takeaway during short breaks, whereas mug usage remained stable throughout the day
 
 # References
+
+*Unfortunately, I wasn’t able to get the references to work properly, despite spending two days trying to resolve the issue. I compared my setup with classmates, consulted ChatGPT, created test files, and reached out to Lars, but unfortunately without success. I added the references using Zotero and inserted them through the visual editor—where they do appear—but they don’t render in the final HTML output (same for the author in the title). As frustrating as this has been, I’ve decided to submit the assignment as it is.*

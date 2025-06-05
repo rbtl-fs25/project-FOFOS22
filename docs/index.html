@@ -125,8 +125,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cowplot)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Data used in index_file -&gt; idata</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Data used in index_file -&gt; idata</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="introduction" class="level1">
@@ -142,7 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
-<p>Firstly when looking at the plain distribution of the choice of mug seen in <a href="#fig-dis-cups" class="quarto-xref">Figure&nbsp;1</a> we confirm the observation mentioned in the introduction. 42% of the customers chose the Single Use Cup and 58% some sort of Reusable Cup.</p>
+<p>Firstly when looking at the plain distribution of the choice of mug seen in <a href="#fig-dis-cups" class="quarto-xref">Figure&nbsp;1</a> we confirm the observation mentioned in the introduction. 41% of the customers chose the Single Use Cup and 59% some sort of Reusable Cup.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>idata.dis <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../data/final/data_cups_distribution.csv"</span>,<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -190,7 +191,7 @@ Figure&nbsp;1: Choice of Cup by the Customers at ETH Cafeteria Einstein
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>,</span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">width =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Reason for choosing cup"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Reasons for Cup Selection"</span>,</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Single Use Cup"</span>,</span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">""</span></span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
@@ -212,7 +213,7 @@ Figure&nbsp;1: Choice of Cup by the Customers at ETH Cafeteria Einstein
 <span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">width =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Multi Use Cup"</span>,</span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of Answers (Single Choice)"</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of Answers"</span></span>
 <span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_colorblind</span>() <span class="sc">+</span></span>
 <span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
@@ -235,13 +236,13 @@ Figure&nbsp;1: Choice of Cup by the Customers at ETH Cafeteria Einstein
 <img src="index_files/figure-html/fig-reas-cups-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reas-cups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Reasons indicated for choice of cup
+Figure&nbsp;2: Reasons for Cup Selection
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>When we compare the reasoning behind the choice, as seen in fig <a href="#fig-reas-cups" class="quarto-xref">Figure&nbsp;2</a> we some clear tendency in both choices. Interestingly, most participants in this study mentioned that they chose the single-use paper cup simply because it was the first thing they saw next to the machine—making it a logical and convenient choice. This salience bias is evident in the setup (see image below): the cafeteria mugs are stored in a heating cabinet, making them less visible and accessible, while the single-use cups are prominently displayed right next to the coffee machine.</p>
+<p>When we compare the reasoning behind the choice, as seen in fig <a href="#fig-reas-cups" class="quarto-xref">Figure&nbsp;2</a> we some clear tendency in both choices. Interestingly, most participants in this study mentioned that they chose the single-use paper cup simply because it was the first thing they saw next to the machine—making it a logical and convenient choice. This salience bias is evident in the setup: the cafeteria mugs are stored in a heating cabinet next to machine, making them less visible and accessible, while the single-use cups are prominently displayed right next to the coffee machine.</p>
 <p>Unsurprisingly, the second most common reason given was the desire to take the drink away, followed by general preference. However, upon further questioning, this preference was closely tied to convenience. Many participants expressed that they preferred using a single-use cup—even when consuming the drink on-site—because it left the option open to take the drink with them later. In other words, the perceived convenience of future flexibility influenced their immediate choice.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>idata_time <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../data/final/data_cup_time.csv"</span>,<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
@@ -254,10 +255,9 @@ Figure&nbsp;2: Reasons indicated for choice of cup
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Time Distribution of Cup Choice"</span>,</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Time"</span>,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span><span class="st">"Type of Cup"</span>,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> <span class="fu">scale_fill_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Cafeteria Mug"</span>, </span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Own Mug"</span>,</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Single Use Paper Cup"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Type of Cup"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Type of Cup"</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-cup-time" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -265,13 +265,13 @@ Figure&nbsp;2: Reasons indicated for choice of cup
 <img src="index_files/figure-html/fig-cup-time-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cup-time-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Distrubtion of cup choice over time interval
+Figure&nbsp;3: Analysis of Cup Selection Over Time
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>An analysis of the time distribution of coffee cup choices reveals a noticeable clustering of single-use cup selections around the typical break period (10:00–10:15). In contrast, the use of conventional cafeteria mugs remains relatively stable throughout the measured interval. Although the data is not sufficient to draw definitive conclusions, this observed trend in single-use cup usage may reflect the preference for take-away convenience discussed earlier.</p>
+<p>An analysis of the time distribution seen in <a href="#fig-cup-time" class="quarto-xref">Figure&nbsp;3</a> of coffee cup choices reveals a noticeable clustering of single-use cup selections around the typical break period (10:00–10:15). In contrast, the use of conventional cafeteria mugs remains relatively stable throughout the measured interval. Although the data is not sufficient to draw definitive conclusions, this observed trend in single-use cup usage may reflect the preference for take-away convenience discussed earlier.</p>
 <p>When considering age range in cup choice reasoning, a further pattern emerges: the previously mentioned salience bias appears to be particularly strong among older participants. Compared to the average age of those who consumed their beverages on-site using reusable cups, those who opted for single-use cups were, on average, more than ten years older. Table <a href="#tbl-cup-summary" class="quarto-xref">Table&nbsp;1</a> provides a summary of the study, including participants’ age ranges, and their reasoning for cup choice.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>idata_table <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../data/final/data_table.csv"</span>,<span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
@@ -279,7 +279,7 @@ Figure&nbsp;3: Distrubtion of cup choice over time interval
 <div id="tbl-cup-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cup-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Summary tabe of the choice and reasoning
+Table&nbsp;1: Selection Summary and Rationale Table
 </figcaption>
 <div aria-describedby="tbl-cup-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -372,6 +372,7 @@ Single-use cups showed a usage spike during the standard break time (10:00–10:
 </section>
 <section id="references" class="level1">
 <h1>References</h1>
+<p><em>Unfortunately, I wasn’t able to get the references to work properly, despite spending two days trying to resolve the issue. I compared my setup with classmates, consulted ChatGPT, created test files, and reached out to Lars, but unfortunately without success. I added the references using Zotero and inserted them through the visual editor—where they do appear—but they don’t render in the final HTML output (same for the author in the title). As frustrating as this has been, I’ve decided to submit the assignment as it is.</em></p>
 </section>
 
 </main>
